@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     # Run the steps in a Docker container on the virtual machine
     container:
-      image: mcr.microsoft.com/dotnet/core/sdk:3-bionic
+      image: mcr.microsoft.com/dotnet/aspnet:5.0
     steps:
       # Checkout Git repository
     - uses: actions/checkout@v2
