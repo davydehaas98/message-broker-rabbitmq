@@ -1,8 +1,8 @@
-name: .NET Core push on main branch
+name: .NET push on feature branch
 
 on:
   push:
-    branches: [main]
+    branches: [feature/*]
 
 jobs:
   build:
@@ -19,13 +19,7 @@ jobs:
       run: dotnet restore
       # Build the project
     - name: Build
-      run: dotnet build      
+      run: dotnet build
       # Test the project
     - name: Test
       run: dotnet test
-      # Pack the release build in the /release folder
-    - name: Pack
-      run: dotnet pack -c Release -o release
-      # Deliver NuGet package to nuget.org
-    - name: Deliver NuGet package to nuget.org
-      run: dotnet nuget push ./release/*.nupkg --source "nuget" --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate

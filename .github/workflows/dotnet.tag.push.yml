@@ -1,8 +1,12 @@
-name: .NET Core push on develop branch
+name: .NET push on main branch
 
 on:
   push:
-    branches: [develop]
+    tags:
+    - 'v**'
+
+env:
+  BUILD_CONFIGURATION: Release
 
 jobs:
   build:
@@ -14,15 +18,21 @@ jobs:
     steps:
       # Checkout Git repository
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
       # Install the dependencies needed for the project
     - name: Install dependencies
       run: dotnet restore
       # Build the project
     - name: Build
-      run: dotnet build
+      run: dotnet build      
       # Test the project
     - name: Test
       run: dotnet test
-      # Pack the release build in the /release folder
+      # Pack the release build in the /output folder
     - name: Pack
-      run: dotnet pack -c Release -o release
+      run: dotnet pack -c ${{ env.BUILD_CONFIGURATION }} -o output
+      # Deliver NuGet package to nuget.org
+    - name: Deliver NuGet package to nuget.org
+      run: |
+        dotnet nuget push ./output/*.nupkg --source "nuget" --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
