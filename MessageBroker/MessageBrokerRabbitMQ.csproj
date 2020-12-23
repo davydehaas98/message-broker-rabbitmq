@@ -1,10 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
         <RepositoryUrl>https://github.com/davydehaas98/message-broker-rabbitmq</RepositoryUrl>
         <PackageId>davydehaas98.MessageBrokerRabbitMQ</PackageId>
-        <Version>v1.0.1</Version>
+        <Version>1.0.1</Version>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     </PropertyGroup>
