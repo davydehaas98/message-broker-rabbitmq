@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
-        <RepositoryUrl>https://github.com/davydehaas98/message-broker-rabbitmq</RepositoryUrl>
+        <RepositoryUrl>https://github.com/S65-2-project/MessageBroker</RepositoryUrl>
         <PackageId>davydehaas98.MessageBrokerRabbitMQ</PackageId>
         <Version>1.0.1</Version>
         <IncludeSymbols>true</IncludeSymbols>
