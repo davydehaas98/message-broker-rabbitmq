@@ -1,8 +1,11 @@
-name: .NET Core push on feature branch
+name: .NET push on develop branch
 
 on:
   push:
-    branches: [feature/*]
+    branches: [develop]
+
+env:
+  BUILD_CONFIGURATION: Release
 
 jobs:
   build:
@@ -14,12 +17,17 @@ jobs:
     steps:
       # Checkout Git repository
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
       # Install the dependencies needed for the project
     - name: Install dependencies
       run: dotnet restore
       # Build the project
     - name: Build
-      run: dotnet build
+      run: dotnet build      
       # Test the project
     - name: Test
       run: dotnet test
+      # Pack the release build in the /output folder
+    - name: Pack
+      run: dotnet pack -c ${{ env.BUILD_CONFIGURATION }} -o output
