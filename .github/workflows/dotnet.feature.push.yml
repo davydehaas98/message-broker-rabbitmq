@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     # Run the steps in a Docker container on the virtual machine
     container:
-      image: mcr.microsoft.com/dotnet/sdk:5.0
+      image: mcr.microsoft.com/dotnet/sdk:5.0@sha256:3ff465d940de3e2c727794d92fd7bb649c498d4abd91bc9213ea7831ebf01f1e
     steps:
       # Checkout Git repository
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
       # Install the dependencies needed for the project
     - name: Install dependencies
       run: dotnet restore
