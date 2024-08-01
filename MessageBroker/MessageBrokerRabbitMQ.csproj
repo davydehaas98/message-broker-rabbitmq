@@ -4,7 +4,7 @@
         <TargetFramework>net5.0</TargetFramework>
         <RepositoryUrl>https://github.com/davydehaas98/message-broker-rabbitmq</RepositoryUrl>
         <PackageId>davydehaas98.MessageBrokerRabbitMQ</PackageId>
-        <Version>1.0.2</Version>
+        <Version>1.0.3</Version>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     </PropertyGroup>
@@ -15,7 +15,7 @@
 		<PackageReference Include="Microsoft.Extensions.Configuration.NewtonsoftJson" Version="5.0.1" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.1" />
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
-		<PackageReference Include="RabbitMQ.Client" Version="6.4.0" />
+		<PackageReference Include="RabbitMQ.Client" Version="6.8.1" />
     </ItemGroup>
 
 </Project>
