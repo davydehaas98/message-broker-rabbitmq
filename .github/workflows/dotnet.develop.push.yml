@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     # Run the steps in a Docker container on the virtual machine
     container:
-      image: mcr.microsoft.com/dotnet/sdk:5.0
+      image: mcr.microsoft.com/dotnet/sdk:7.0@sha256:d32bd65cf5843f413e81f5d917057c82da99737cb1637e905a1a4bc2e7ec6c8d
     steps:
       # Checkout Git repository
     - uses: actions/checkout@v3
